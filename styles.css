@@ -1,0 +1,173 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+  min-width: 25rem;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "contL contR";
+  grid-template-columns: 60%;
+}
+.container .container-left {
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  grid-area: contL;
+  padding: 5rem 10rem;
+}
+.container .container-left h1 {
+  letter-spacing: 1.5rem;
+  margin-top: 10rem;
+  font-weight: 400;
+  font-size: 8rem;
+  text-transform: uppercase;
+}
+.container .container-left h1 span {
+  font-weight: 200;
+  color: #ce9797;
+}
+.container .container-left p {
+  margin-top: 2rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  width: 80%;
+  color: #ce9797;
+}
+.container .container-left .container-form {
+  margin-top: 3rem;
+  border-radius: 5rem;
+  border: 1px solid #ce9797;
+  position: relative;
+  height: 6rem;
+  width: 80%;
+}
+.container .container-left .container-form form {
+  width: 80%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.container .container-left .container-form form input {
+  background-color: white;
+  margin-left: 5rem;
+  border-radius: 5rem;
+  font-family: "Josefin Sans", sans-serif;
+  border: none;
+  width: 80%;
+  height: 100%;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.container .container-left .container-form form input:focus {
+  outline: none;
+}
+.container .container-left .container-form form input::placeholder {
+  background-color: transparent;
+  color: #ce9797;
+  padding-left: 4rem;
+}
+.container .container-left .container-form .button {
+  position: absolute;
+  right: -1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.8rem 5.3rem;
+  border-radius: 30rem;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  cursor: pointer;
+}
+.container .container-left .container-form .button img {
+  width: 1.4rem;
+}
+.container .container-left .container-form .button .image-error {
+  display: none;
+  position: absolute;
+  width: 3rem;
+  right: 18vh;
+}
+.container .container-left .container-form .text-err {
+  display: none;
+  color: #f96262;
+  font-weight: 700;
+  margin: 1rem 3rem;
+  font-size: 1.5rem;
+}
+.container .container-right {
+  grid-area: contR;
+  background-image: url(images/hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.container .container-right img {
+  display: none;
+}
+
+@media screen and (max-width: 80rem) {
+  .container {
+    height: auto;
+    grid-template-areas: "contR" "contL";
+    grid-template-columns: 100%;
+  }
+  .container .container-left {
+    text-align: center;
+    padding: 0rem 0rem;
+  }
+  .container .container-left .responsive-img {
+    display: none;
+  }
+  .container .container-left h1 {
+    letter-spacing: 1rem;
+    margin-top: 6rem;
+    font-size: 5rem;
+  }
+  .container .container-left p {
+    padding: 1rem;
+    line-height: 2.5rem;
+    font-size: 1.6rem;
+    width: 100%;
+  }
+  .container .container-left .container-form {
+    margin: 2rem auto;
+    width: 90%;
+  }
+  .container .container-left .container-form form input {
+    margin-left: 0rem;
+    width: 80%;
+    font-size: 1.4rem;
+  }
+  .container .container-left .container-form .button {
+    padding: 1.8rem 3rem;
+  }
+  .container .container-left .container-form .button .image-error {
+    right: 8rem;
+  }
+  .container .container-left .container-form .text-err {
+    margin: 0 0 0 -3rem;
+  }
+  .container .container-right {
+    height: 30rem;
+    background-image: url(images/hero-mobile.jpg);
+    background-size: 100%;
+    background-position: center 9rem;
+  }
+  .container .container-right img {
+    display: block;
+    width: 13rem;
+    margin: 3rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

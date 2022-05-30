@@ -1,0 +1,198 @@
+
+$color-desaturated-red: hsl(0, 36%, 70%);
+$color-soft-red: hsl(0, 93%, 68%);
+$color-dark-grayish-red: hsl(0, 6%, 24%);
+$font-family: 'Josefin Sans',sans-serif;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: $font-family;
+}
+
+.container{
+    min-width: 25rem;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "contL contR";
+    grid-template-columns: 60%;
+
+    .container-left{
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        grid-area: contL;
+        padding: 5rem 10rem;
+        h1{
+            letter-spacing: 1.5rem;
+            margin-top: 10rem;
+            font-weight: 400;
+            font-size: 8rem;
+            text-transform: uppercase;
+            span{
+                font-weight: 200;
+                color: $color-desaturated-red;
+                
+            }
+        }
+        p{
+            margin-top: 2rem;
+            line-height: 4rem;
+            font-size: 2rem;
+            width: 80%;
+                color: $color-desaturated-red;
+        }
+        .container-form{
+            margin-top: 3rem;
+            border-radius: 5rem;
+            border: 1px solid $color-desaturated-red;
+            position: relative;
+            height: 6rem;
+            width: 80%;
+            form{
+                width: 80%;
+                display: flex;
+                height: 100%;
+                align-items: center; 
+                input{
+                    background-color: white;
+                    margin-left: 5rem;
+                    border-radius: 5rem;
+                    font-family: $font-family;
+                    border: none;
+                    width: 80%;
+                    height: 100%;
+                    font-size: 1.7rem;
+                    font-weight: 600;
+                    &:focus{
+                        outline: none;
+                    }
+                    &::placeholder{
+                        background-color: transparent;
+                        color: $color-desaturated-red;
+                        padding-left: 4rem;
+                    }
+                }
+            }
+           
+            .button{
+               position: absolute;
+                right: -1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding:  1.8rem 5.3rem;
+                border-radius: 30rem;
+                background-image: linear-gradient(135deg,hsl(0,80%,86%),hsl(0,74%,74%));
+                cursor: pointer;
+                   
+                img{
+                 width: 1.4rem;
+                }
+                .image-error{
+                    display: none;
+                    position: absolute;
+                    width: 3rem;
+                    right: 18vh;
+                }
+            }
+            .text-err{
+                display: none;
+                color: $color-soft-red;
+                font-weight: 700;
+                margin: 1rem 3rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .container-right{
+        grid-area: contR;
+        background-image: url(images/hero-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        img{
+            display: none;
+        }
+       
+    }
+}
+
+@media screen and (max-width: 80rem) {
+  
+    .container {
+            height: auto; 
+            grid-template-areas:
+            "contR"
+             "contL"
+             ; 
+            grid-template-columns:100%; 
+    
+            .container-left {
+                text-align: center;
+                .responsive-img{
+                    display: none; 
+                }
+                padding: 0rem 0rem; 
+    
+                h1 {
+                    letter-spacing: 1rem; 
+                    margin-top: 6rem; 
+                    font-size: 5rem; 
+                }
+    
+                p {
+                    padding: 1rem; 
+                    line-height: 2.5rem; 
+                    font-size: 1.6rem; 
+                    width: 100%; 
+                }
+    
+                .container-form {
+
+                    margin: 2rem auto ; 
+                    width: 90%; 
+    
+                    form {
+                        input {
+                            margin-left: 0rem; 
+                            width: 80%; 
+                            font-size: 1.4rem; 
+    
+                        }
+                    }
+                    .button {
+                
+                        padding: 1.8rem 3rem;  
+                  
+    
+                        .image-error {
+                            right: 8rem; 
+                        }
+                    }
+    
+                    .text-err {
+                        margin:  0 0 0 -3rem; 
+                    }
+                }
+            }
+    
+            .container-right {
+                height: 30rem;
+                background-image: url(images/hero-mobile.jpg);
+                background-size: 100%;
+                background-position: center 9rem;
+                img{
+                    display: block;
+                    width: 13rem;
+                    margin: 3rem;
+                }
+    
+            }
+        }
+}
